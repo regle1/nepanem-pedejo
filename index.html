@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepaņem pēdējo!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');</style>
+
+</head>
+<body>
+    <div class="main"> 
+        <div class="game-container">
+            <div class="game-container-items">
+                <div id="game-name" class="header">
+                    <h1>Nepaņem pēdējo!</h1>
+                </div>
+                <div id="game-items" class="game-items" style="display: none;">
+                    <div class="score">
+                        <h1 class="total-number" id="total"></h2>
+                    </div>
+
+                    <div class="action" id="action" style="opacity: 0;">
+                        <h2 id="action-number">-3</h2>
+                    </div>
+                    <div class="controls">
+                        <button class="speletajaPoga" id="viens" onclick="speletajaIzvele(1)">-1</button>
+                        <button class="speletajaPoga" id="divi" onclick="speletajaIzvele(2)">-2</button>
+                        <button class="speletajaPoga" id="tris" onclick="speletajaIzvele(3)">-3</button>
+                    </div>
+                </div>
+                <div id="game-start" class="game-start">
+                    <h2 class="starting-player">Izvēlies kurš sāk spēli:</h2>
+                    <div class="extra-controls">
+                        <button id="userFirstButton" onclick="userGoesFirst()" >Spēlētājs</button>
+                        <button id="computerFirstButton" onclick="computerGoesFirst()" >Dators</button>
+                    </div>
+                </div>
+
+                <div id="game-end" class="game-end" style="display: none;">
+                    <h2 id="result" class="result">Apsveicam!</h2>
+                    <p id="result-teksts" class="result-teksts">Jūs esat uzvarējis!</p>
+                    <button id="resetButton" onclick="resetGame()">Spēlēt vēlreiz</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="log-container" class="log-container" style="display: none;">
+            <h1 class="log-header">Spēles vēsture</h2>
+            <div class="log-body" id="log">
+                <p class="log_message"></p>
+            </div>
+        </div>
+        <div id="noteikumi-container" class="noteikumi-container" style="display: block;">
+            <h1 class="log-header">Spēles noteikumi</h1>
+            <div class="noteikumi-body">
+                <p class="noteikumi_message">
+                    Spēles mērķis ir "nepaņemt" pēdējo skaitli, katrā gājienā izvēloties starp trīs iespējām - atņemt 1, 2 vai 3. Katrā gājienā ir obligāti jaatņem kāda no vērtībām. Spēle sākas ar skaitli 21.
+                </p>
+                <p class="copyright">Reinis Egle, 3. grupa, 211RDB253</p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+body, button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #191825;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+.main {
+    position: absolute;
+    max-width: 800px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 350px;
+}
+
+.log-container {
+    width: 40%;
+    float: right;
+    background-color: #534d93;
+    padding: 25px;
+}
+
+.noteikumi-container {
+    width: 40%;
+    float: right;
+    background-color: #534d93;
+    padding: 25px;
+}
+
+.log-header {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.log-body {
+    height: 100%;
+    max-height: 255px;
+    overflow-y: auto;
+}
+
+.noteikumi-body {
+    height: 100%;
+    max-height: 255px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p.copyright {
+    font-size: 14px;
+    color: lightgrey;
+}
+
+.log_message {
+    font-size: 14px;
+    color: lightgrey;
+}
+
+.noteikumi_message {
+    font-size: 14px;
+    color: lightgrey;
+}
+
+.lose_message {
+    color: #f08d8d;
+}
+
+.win_message {
+    color: #8df092;
+}
+.game-container {
+    width: 60%;
+    background-color: #865DFF;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.game-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-start {
+    width: 100%;
+}
+
+.game-end {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-end button {
+    width: 40%;
+    padding: 8px 12px 8px 12px;
+    border: 2px solid white;
+    background-color: #e384ff;
+    cursor: pointer;
+}
+
+.game-end button:hover {
+    background-color: white;
+    color: #191825;
+}
+
+p.result-teksts {
+    margin-bottom: 15px;
+}
+
+h2.starting-player {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.extra-controls {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.extra-controls button {
+    width: 40%;
+    padding: 8px 12px 8px 12px;
+    border: 2px solid white;
+    background-color: #e384ff;
+    cursor: pointer;
+}
+
+.extra-controls button:hover {
+    background-color: white;
+    color: #191825;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.controls button {
+    width: 30%;
+    padding: 8px 12px 8px 12px;
+    border: 2px solid white;
+    background-color: #e384ff;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: white;
+    color: #191825;
+}
+
+.controls button:disabled {
+    background-color: #a8a8a8;
+    color: white;
+    border-color: #a8a8a8;
+    cursor: default;
+}
+
+.score {
+    background: #191825;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.total-number {
+    font-size: 32px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+h2#action-number {
+    background-color: #534d93;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+div#action {
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+/* custom scrollbar */
+/* Atsauce: https://dev.to/xtrp/how-to-create-a-beautiful-custom-scrollbar-for-your-site-in-plain-css-1mjg*/
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+

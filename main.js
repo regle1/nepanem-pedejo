@@ -56,19 +56,15 @@ function speletajaIzvele(izvele) {
 function datoraIzvele() {
 
     let izvele
-    let bestScore = -Infinity;
+    let bestValue = -Infinity
     for (let i = 1; i <= 3; i++) {
-      if (total > i) {
-        let score = minimax(total - i, false);
-        
-        // Atrod izvēli ar vislielāko "bestScore"
-        if (score > bestScore) {
-          bestScore = score;
-
-          // Izvēle ir vienāda ar labākā iespējamā gājiena izvēli
-          izvele = i;
+        if (total > i) {
+            value = minimax(total - i, false)
+            if (value > bestValue) {
+                bestValue = value
+                izvele = i
+            }
         }
-      }
     }
 
     // Pievieno ierakstu spēles vēsturē
@@ -95,61 +91,43 @@ function datoraIzvele() {
 }
 
 /* -=-=-=-=-=-=-=-= Minimax Algoritms =-=-=-=-=-=-=-=-*/
-function minimax(total, isMaximizingPlayer) {
+// Pseido koda piemērs ņemts no: https://en.wikipedia.org/wiki/Minimax#Pseudocode
 
-    // Pārbauda vai spēle jau nav sasniegusi beigu rezultātu
-    if (total == 1) {
-        if (isMaximizingPlayer) {
+function minimax(node, maximizingPlayer) {
+
+    if (node == 1) {
+        if (maximizingPlayer == true) {
             return -1
         } else {
             return 1
         }
     }
 
-    // Rezultāts tiek maksimizēts, lai iegūtu labāko iespējamo gājienu
-    if (isMaximizingPlayer) {
-        let bestScore = -Infinity;
-
-        // Apskata, katru iespējamo izvēli
+    if (maximizingPlayer == true) {
+        let bestValue = -Infinity
         for (let i = 1; i <= 3; i++) {
-
-            // Pārbauda, jau nav sasniegts spēles beigu rezultāts
-            if (total >= i) {
-
-                // Rekursīvi atkārto galoritmu, apskatot, katru iespējamo gājienu
-                let score = minimax(total - i, false);
-
-                // Atrod lielāko "bestScore", kas norādīs uz labāko iespējamāo gājiena izvēli
-                if (score > bestScore) {
-                    bestScore = score;
+           if (node > i) {
+                value = minimax(node - i ,false)
+                if (value > bestValue) {
+                    bestValue = value
                 }
             }
         }
-        return bestScore
-        
-    }
+        return bestValue
 
-    // Rezultāts tiek minimizēts, lai iegūtu sliktāko iespējamo gājienu
-    else {
-        let bestScore = Infinity;
-
-        // Apskata, katru iespējamo izvēli
+    } else {
+        let bestValue = Infinity
         for (let i = 1; i <= 3; i++) {
-
-            // Pārbauda, jau nav sasniegts spēles beigu rezultāts
-            if (total >= i) {
-
-                // Rekursīvi atkārto galoritmu, apskatot, katru iespējamo gājienu
-                let score = minimax(total - i, true);
-
-                // Atrod mazāko "bestScore", kas norādīs uz sliktāko iespējamāo gājiena izvēli
-                if (score < bestScore) {
-                    bestScore = score;
+            if (node > i) {
+                value = minimax(node - i, true)
+                if (value < bestValue) {
+                    bestValue = value
                 }
             }
         }
-        return bestScore
+        return bestValue
     }
+     
 }
 
 /* -=-=-=-=-=-=-=-= CSS Palīgfukcijas =-=-=-=-=-=-=-=-*/
@@ -362,3 +340,4 @@ function parbaudaPogas() {
         document.getElementById("tris").disabled = true
     }
 }
+
